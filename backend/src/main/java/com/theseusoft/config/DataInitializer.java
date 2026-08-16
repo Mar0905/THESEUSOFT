@@ -1,0 +1,3 @@
+package com.theseusoft.config;
+import com.theseusoft.entity.Role; import com.theseusoft.entity.User; import com.theseusoft.repository.UserRepository; import java.util.Set; import org.springframework.boot.CommandLineRunner; import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration; import org.springframework.security.crypto.password.PasswordEncoder;
+@Configuration public class DataInitializer { @Bean CommandLineRunner seedAdmin(UserRepository users, PasswordEncoder encoder){return args->{if(users.findByUsername("admin").isEmpty()){var user=new User();user.setUsername("admin");user.setPassword(encoder.encode("ChangeMe123!"));user.setRoles(Set.of(Role.ROLE_ADMIN));users.save(user);}};} }

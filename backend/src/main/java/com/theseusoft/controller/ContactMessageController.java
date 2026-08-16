@@ -1,0 +1,3 @@
+package com.theseusoft.controller;
+import com.theseusoft.dto.*; import com.theseusoft.service.ContactMessageService; import jakarta.validation.Valid; import java.util.List; import org.springframework.http.*; import org.springframework.web.bind.annotation.*;
+@RestController @RequestMapping("/api/contact-messages") public class ContactMessageController {private final ContactMessageService service; public ContactMessageController(ContactMessageService service){this.service=service;} @PostMapping public ResponseEntity<ContactMessageResponse> create(@Valid @RequestBody ContactMessageRequest r){return ResponseEntity.status(HttpStatus.CREATED).body(service.create(r));} @GetMapping public List<ContactMessageResponse> findAll(){return service.findAll();}}

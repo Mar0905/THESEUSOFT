@@ -1,0 +1,10 @@
+{
+  "description": "Showcases an AI-driven tech startup's intelligent web applications portfolio with client support, business solutions, and seamless contact options.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

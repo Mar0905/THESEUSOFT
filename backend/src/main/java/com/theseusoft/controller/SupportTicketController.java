@@ -1,0 +1,3 @@
+package com.theseusoft.controller;
+import com.theseusoft.dto.*; import com.theseusoft.service.SupportTicketService; import jakarta.validation.Valid; import java.util.List; import org.springframework.http.*; import org.springframework.web.bind.annotation.*;
+@RestController @RequestMapping("/api/support-tickets") public class SupportTicketController {private final SupportTicketService service; public SupportTicketController(SupportTicketService service){this.service=service;} @PostMapping public ResponseEntity<SupportTicketResponse> create(@Valid @RequestBody SupportTicketRequest r){return ResponseEntity.status(HttpStatus.CREATED).body(service.create(r));} @GetMapping public List<SupportTicketResponse> findAll(){return service.findAll();}}
