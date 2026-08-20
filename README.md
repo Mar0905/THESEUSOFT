@@ -1,6 +1,6 @@
 # THESEUSOFT — Web corporativa y soporte
 
-Aplicación web corporativa basada en el diseño existente de Figma. Conserva su estética oscura, morada y orientada a IA; el formulario de contacto y la creación de tickets ahora se guardan mediante una API REST protegida.
+Aplicación web corporativa y de soporte de THESEUSOFT. El frontend está construido con React, TypeScript y Vite; el backend es una API REST de Spring Boot.
 
 ## Tecnologías
 
@@ -11,11 +11,9 @@ Aplicación web corporativa basada en el diseño existente de Figma. Conserva su
 ## Estructura
 
 ```text
-Página Web Corporativa/     # Frontend de Vite
+frontend/                  # Aplicación React + TypeScript + Vite
 backend/                   # API Spring Boot
 ```
-
-El diseño Figma original se mantiene en `Página Web Corporativa/src/App.tsx` y sus recursos en `Página Web Corporativa/src/imports/`. La capa de integración se encuentra en `src/services/`, los tipos en `src/types/` y las páginas de router en `src/pages/`.
 
 ## Requisitos
 
@@ -24,7 +22,7 @@ Node.js 20+, pnpm, Java 21 y MySQL 8+.
 ## Ejecutar el frontend
 
 ```powershell
-cd "Página Web Corporativa"
+cd frontend
 pnpm install
 Copy-Item .env.example .env
 pnpm dev
@@ -48,7 +46,7 @@ Para producción usa una clave JWT Base64 privada de más de 32 bytes y configur
 ## Rutas web
 
 - `/`: sitio corporativo con las secciones existentes de Figma.
-- `/nosotros`, `/soluciones`, `/clientes`, `/soporte`, `/contacto`: enlaces directos a sus secciones reales.
+- `/inicio`, `/nosotros`, `/soluciones`, `/clientes`, `/soporte`, `/contacto`: enlaces directos a las secciones reales.
 - `/login`: acceso del personal de soporte.
 
 ## API principal

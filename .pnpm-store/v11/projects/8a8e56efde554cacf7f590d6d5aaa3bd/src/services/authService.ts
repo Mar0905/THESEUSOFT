@@ -1,5 +1,5 @@
 import api from "./api"
-import type { AuthResponse } from "@/types/api"
+import type { AuthResponse } from "@/models/api"
 
 export const authService = {
   async login(username: string, password: string) {
